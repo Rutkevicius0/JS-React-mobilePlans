@@ -4,8 +4,14 @@ class HaveServices extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <h1>Have services</h1>
+      <div className="haveservices-container">
+        <label className="switch">
+          <input type="checkbox" />
+          <span className="slider round"></span>
+        </label>
+        <p className="haveservices-text">
+          Turite „Telia“ namų paslaugų? Gausite dar daugiau GB su Telia1.
+        </p>
       </div>
     );
   }

@@ -9,9 +9,21 @@ import '../node_modules/fontawesome-4.7/css/font-awesome.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      commitment: true,
+      plans: [],
+    };
   }
-  state = {};
+  async componentDidMount() {
+    const res = await fetch('/data/plan1.json');
+    const data = await res.json();
+    this.setState({ plans: data });
+    console.log(this.state.plans);
+  }
+  handleRadio = () => {
+    console.log('select was pressed');
+    this.setState({ commitment: !this.state.commitment });
+  };
   render() {
     return (
       <div className="App">
@@ -22,11 +34,14 @@ class App extends Component {
             Skandinavijos šalyse.
           </p>
           <div className="controls">
-            <Commitment />
+            <Commitment
+              handleRadio={this.handleRadio}
+              commitment={this.state.commitment}
+            />
             <HaveServices />
           </div>
           <main className="plan-cards">
-            <MobilePlan />
+            <MobilePlan plansData={this.state.plans} />
           </main>
         </div>
       </div>
