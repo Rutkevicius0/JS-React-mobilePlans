@@ -5,7 +5,29 @@ class Commitment extends Component {
   render() {
     return (
       <div className="commitment-container">
-        <h1>comkitment</h1>
+        <form className="commitment-form">
+          <div className="commitment-choice">
+            <input
+              className="radio-check"
+              type="radio"
+              name="contract"
+              id="contract"
+              value="contract"
+              defaultChecked
+            />
+            <label for="contract">24 men. sutartis</label>
+          </div>
+          <div className="commitment-choice">
+            <input
+              className="radio-check"
+              type="radio"
+              name="contract"
+              id="nocontract"
+              value="nocontract"
+            />
+            <label for="nocontract">Be isipareigojimu</label>
+          </div>
+        </form>
       </div>
     );
   }

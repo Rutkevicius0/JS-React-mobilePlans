@@ -11,7 +11,9 @@ class MobilePlan extends Component {
             <h5 className="data-noservices">1 GB</h5>
             <h5 className="data-withservices">2 GB</h5>
           </div>
-          <small>Iš jų 1 GB ES/EEE</small>
+          <small>
+            Iš jų 1 GB <span className="roaming-info">ES/EEE</span>{' '}
+          </small>
           <p>Neribotos MIN ir SMS</p>
         </div>
         <div className="card-middle">

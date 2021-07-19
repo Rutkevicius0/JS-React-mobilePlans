@@ -14,6 +14,9 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+.controls {
+  display: flex;
+}
 .plan-card {
   width: 25%;
   background-color: #ffffff;
@@ -82,4 +85,28 @@ body {
   font-size: 1em;
   color: #ffffff;
   padding: 1em;
+}
+
+/* COMMITMENT */
+
+.commitment-container {
+  height: 4em;
+  width: 50%;
+}
+.commitment-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+  gap: 1px;
+}
+.commitment-choice {
+  background-color: #eaeaea;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.radio-check {
+  cursor: pointer;
 }
