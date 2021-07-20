@@ -9,7 +9,7 @@ class Commitment extends Component {
           className="commitment-choice"
         >
           <label className="control control-radio">
-            24 men. sutartis
+            24 mėn. sutartis
             <input type="radio" name="radio" defaultChecked />
             <div className="control_indicator"></div>
           </label>
@@ -19,7 +19,7 @@ class Commitment extends Component {
           className="commitment-choice"
         >
           <label className="control control-radio">
-            Be isipareigojimu
+            Be įsipareigojimų
             <input type="radio" name="radio" />
             <div className="control_indicator"></div>
           </label>

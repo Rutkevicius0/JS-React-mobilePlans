@@ -22,7 +22,7 @@ class MobilePlan extends Component {
               Iš jų {p.dataEU} GB <span className="roaming-info">ES/EEE</span>{' '}
               {p.worldwide && `+ ${p.worldwide} MB kitose šalyse`}
             </small>
-            <p>{p.minSms}</p>
+            <p className="minsms">{p.minSms}</p>
           </div>
           <div className="card-middle">
             {p.features.map((f) => {

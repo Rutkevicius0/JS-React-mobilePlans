@@ -9,14 +9,17 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f2f2f2;
+  padding-bottom: 2em;
 }
 .main-container {
   width: 80%;
   margin: 0 auto;
 }
 .controls {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* display: flex;
+  justify-content: space-between; */
   margin-bottom: 1em;
   gap: 1em;
 }
@@ -28,7 +31,7 @@ body {
 .plan-card {
   width: 100%;
   background-color: #ffffff;
-  border-radius: 1.5em;
+  border-radius: 1em;
 }
 .card-top {
   border-bottom: 1px solid #f2f2f2;
@@ -36,7 +39,7 @@ body {
 }
 .plan-name {
   color: darkgrey;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 .plan-data {
   display: flex;
@@ -56,19 +59,25 @@ body {
 .data-noservices-only {
   color: black;
 }
+.minsms {
+  margin-bottom: 0;
+}
 .card-middle {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border-bottom: 1px solid #f2f2f2;
   padding: 1.5em;
-  min-height: 10em;
+  min-height: 9em;
 }
 .card-link {
   border: none;
   background-color: transparent;
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+}
+.card-link:last-child {
+  margin-bottom: 0;
 }
 .card-link-icon {
   color: #4ed87e;
@@ -78,7 +87,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5em 1.5em 1.5em;
+  padding: 0 1.5em 1em 1.5em;
 }
 .sub-prices {
   width: 30%;
@@ -103,7 +112,7 @@ body {
 
 .commitment-container {
   display: flex;
-  width: 50%;
+  width: 100%;
   gap: 2px;
   height: 4em;
 }
@@ -263,4 +272,13 @@ input:checked + .slider:before {
 }
 .control-radio input:disabled ~ .control_indicator:after {
   background: #ffffff;
+}
+
+@media screen and (max-width: 700px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+  .plan-cards {
+    grid-template-columns: 1fr;
+  }
 }
