@@ -10,6 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      haveServices: true,
       commitment: true,
       plans: [],
     };
@@ -23,6 +24,10 @@ class App extends Component {
   handleRadio = () => {
     console.log('select was pressed');
     this.setState({ commitment: !this.state.commitment });
+  };
+  handleHaveServices = () => {
+    console.log('slided');
+    this.setState({ haveServices: !this.state.haveServices });
   };
   render() {
     return (
@@ -38,10 +43,14 @@ class App extends Component {
               handleRadio={this.handleRadio}
               commitment={this.state.commitment}
             />
-            <HaveServices />
+            <HaveServices haveServices={this.handleHaveServices} />
           </div>
           <main className="plan-cards">
-            <MobilePlan plansData={this.state.plans} />
+            <MobilePlan
+              plansData={this.state.plans}
+              commitment={this.state.commitment}
+              haveServices={this.state.haveServices}
+            />
           </main>
         </div>
       </div>

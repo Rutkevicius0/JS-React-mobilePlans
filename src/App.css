@@ -18,13 +18,15 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1em;
+  gap: 1em;
 }
 .plan-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1em;
 }
 .plan-card {
-  width: 25%;
+  width: 100%;
   background-color: #ffffff;
   border-radius: 1.5em;
 }
@@ -51,12 +53,16 @@ body {
   color: #ff00cc;
   padding-left: 0.5em;
 }
+.data-noservices-only {
+  color: black;
+}
 .card-middle {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border-bottom: 1px solid #f2f2f2;
   padding: 1.5em;
+  min-height: 10em;
 }
 .card-link {
   border: none;
@@ -72,7 +78,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5em;
+  padding: 0 1.5em 1.5em 1.5em;
 }
 .sub-prices {
   width: 30%;

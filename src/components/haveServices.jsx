@@ -4,9 +4,14 @@ class HaveServices extends Component {
   state = {};
   render() {
     return (
-      <div className="haveservices-container">
+      <div
+        onChange={() => {
+          this.props.haveServices();
+        }}
+        className="haveservices-container"
+      >
         <label className="switch">
-          <input type="checkbox" />
+          <input type="checkbox" defaultChecked />
           <span className="slider round"></span>
         </label>
         <p className="haveservices-text">

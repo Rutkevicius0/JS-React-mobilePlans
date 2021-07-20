@@ -1,41 +1,58 @@
 import React, { Component } from 'react';
 
 class MobilePlan extends Component {
-  state = {};
+  formatPrice(num) {}
   render() {
     return this.props.plansData.map((p) => {
       return (
         <div key={p.headerTitle} className="plan-card">
           <div className="card-top">
             <p className="plan-name">{p.headerTitle}</p>
-            <div className="plan-data">
-              <h5 className="data-noservices">{p.dataAlowed} GB</h5>
-              <h5 className="data-withservices">2 GB</h5>
-            </div>
+            {this.props.haveServices && p.dataAlowed !== 'Neriboti' ? (
+              <div className="plan-data">
+                <h5 className="data-noservices">{p.dataAlowed} GB</h5>
+                <h5 className="data-withservices">{p.dataServices} GB</h5>
+              </div>
+            ) : (
+              <div className="plan-data">
+                <h5 className="data-noservices-only">{p.dataAlowed} GB</h5>
+              </div>
+            )}
             <small>
               Iš jų {p.dataEU} GB <span className="roaming-info">ES/EEE</span>{' '}
+              {p.worldwide && `+ ${p.worldwide} MB kitose šalyse`}
             </small>
             <p>{p.minSms}</p>
           </div>
           <div className="card-middle">
-            <button className="card-link">
-              <i className="fa fa-check card-link-icon" aria-hidden="true"></i>{' '}
-              M. parašas (6 mėn.)
-            </button>
-            <button className="card-link">
-              <i className="fa fa-check card-link-icon" aria-hidden="true"></i>
-              Įrangos draudimas (3 mėn.)
-            </button>
+            {p.features.map((f) => {
+              return (
+                <button key={f.title} className="card-link">
+                  <i
+                    className="fa fa-check card-link-icon"
+                    aria-hidden="true"
+                  ></i>{' '}
+                  {f.title}
+                </button>
+              );
+            })}
           </div>
           <div className="card-bottom">
             <div className="sub-prices">
               <h3 className="sub-price">
-                9,00 <span className="thin-text">€/mėn.</span>{' '}
+                {this.props.commitment
+                  ? p.price.commitment.toFixed(2)
+                  : p.price.noComitment.toFixed(2)}{' '}
+                <span className="thin-text">€/mėn.</span>{' '}
               </h3>
-              <small className="sub-term">24 mėn. sutartis</small>
+              <small className="sub-term">
+                {this.props.commitment
+                  ? p.contractLength.commitment
+                  : p.contractLength.noCommitment}
+              </small>
             </div>
             <div className="subscribe">
-              <button className="subscribe-btn">Gauti pasiūlymą</button>
+              <button className="subscribe-btn">{p.ctaButton}</button>
             </div>
           </div>
         </div>
